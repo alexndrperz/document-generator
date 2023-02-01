@@ -1,13 +1,22 @@
 from docxtpl import DocxTemplate
 from docx2pdf import convert
-import os   
+import os  
+import openpyxl as op
+import ReadExcel as rxls
 
 
-# doc = DocxTemplate("value.docx")
-# context = { 'Name' : "World company" }
-# doc.render(context)
-# doc.save("generated_doc.docx")
+m = rxls.reader("values.xlsx")
+print()
 
+fil = op.load_workbook("values.xlsx")
+sheet = fil.get_active_sheet()
+for cellObj in sheet.columns[0]:
+    print(cellObj.value)
+
+
+values = pandas.read_excel('values.xlsx', index_col=0)
+
+print(values['Juan'])
 des = 1 
 while True:
     
