@@ -12,14 +12,12 @@ for i in range(len(names)):
     name = names[i]
     present_name = "Alan Perez"
     date = "12/2/2023"
-    
-    doc = DocxTemplate("value.docx")
-    context = { 'Name' : name, 'Presentator' : present_name, 'Date' : date }
+    print(name)
+    doc = DocxTemplate("plantilla.docx")
+    context = { 'Name' : name}
     doc.render(context)
-    doc.save(f"{name}_{i}.docx")
-    convert(f"{name}_{i}.docx")
-    os.system(f"del {name}_{i}.docx")
-
-    os.system(f"{name}_{i}.pdf")
+    doc.save(f"{i}.docx")
+    convert(f"{i}.docx")
+    os.system(f"del {i}.docx")
 
   
